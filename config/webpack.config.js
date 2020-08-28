@@ -45,7 +45,8 @@ const imageInlineSizeLimit = parseInt(
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
-const cssRegex = /\.css$/;
+// const cssRegex = /\.css$/;
+const cssRegex = /\.(p|post|)css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
@@ -93,6 +94,15 @@ module.exports = function(webpackEnv) {
           // https://github.com/facebook/create-react-app/issues/2677
           ident: 'postcss',
           plugins: () => [
+            require("postcss-easy-import")({
+              extensions: ".pcss"
+            }),
+            require('postcss-nested'),
+            require("postcss-pxtorem")({
+              rootValue: 16,
+              propList: ["*", "!*border*"],
+              selectorBlackList: [/^html$/]
+            }),
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
@@ -336,7 +346,6 @@ module.exports = function(webpackEnv) {
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),
                 resolvePluginsRelativeTo: __dirname,
-                
               },
               loader: require.resolve('eslint-loader'),
             },

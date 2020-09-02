@@ -6,6 +6,8 @@ import Logo from './components/Logo';
 import SearchBar from './components/SearchBar';
 import SettingsEnter from './components/SettingsEnter';
 import CategoryList from './components/CategoryList';
+import ExpressionList from './components/ExpressionList';
+import ExpressionCard from './components/ExpressionCard';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -16,10 +18,10 @@ function App() {
         <Header className="header">
           <Row className="row">
             <Col className="col" span={8}>
-              <Logo></Logo>
+              <Logo className="Logo"></Logo>
             </Col>
             <Col className="col" span={8}>
-              <SearchBar></SearchBar>
+              <SearchBar className="Searchbar"></SearchBar>
             </Col>
             <Col className="col col--settings" span={8}>
               <SettingsEnter></SettingsEnter>
@@ -28,9 +30,14 @@ function App() {
         </Header>
         <Layout className="layout__main">
           <Sider className="sider">
-            <CategoryList></CategoryList>
+            <CategoryList className="CategoryList"></CategoryList>
           </Sider>
-          <Content className="content">Content</Content>
+          <Sider className="sider">
+            <ExpressionList className="ExpressionList"></ExpressionList>
+          </Sider>
+          <Content className="content">
+            <ExpressionCard></ExpressionCard>
+          </Content>
         </Layout>
         <Footer className="footer">Made with love by yasevplaton</Footer>
       </div>

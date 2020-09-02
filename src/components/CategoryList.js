@@ -1,43 +1,46 @@
 import React from "react";
-import { Table } from "antd";
-
-const columns = [
-  {
-    title: "categoryName",
-    dataIndex: "categoryName",
-    key: "categoryName",
-  },
-];
+import { List } from "antd";
+import Category from './Category';
 
 const data = [
   {
-    key: "1",
-    categoryName: "all",
+    id: 0,
+    title: 'all',
+    selected: true,
   },
   {
-    key: "2",
-    categoryName: "unsorted",
+    id: 1,
+    title: 'unsorted',
+    selected: false,
   },
   {
-    key: "3",
-    categoryName: "category1",
+    id: 2,
+    title: 'category1',
+    selected: false,
   },
   {
-    key: "4",
-    categoryName: "category2",
+    id: 3,
+    title: 'category2',
+    selected: false,
+  },
+  {
+    id: 4,
+    title: 'category3',
+    selected: false,
   },
 ];
 
 const CategoryList = () => {
   return (
-    <Table
-      columns={columns}
+    <List
       dataSource={data}
-      bordered={false}
-      pagination={false}
-      showHeader={false}
+      renderItem={item => (
+        <List.Item>
+          <Category item={item}></Category>
+        </List.Item>
+      )}
     />
-  );
+  )
 };
 
 export default CategoryList;

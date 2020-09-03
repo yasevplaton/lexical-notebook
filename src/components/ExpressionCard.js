@@ -16,11 +16,10 @@ const data = [
 ];
 
 const item = data[0];
-console.log(item);
 
 const ExpressionCard = () => {
   return (
-    <Descriptions title="Expression Card" className="ExpressionCard">
+    <Descriptions title="Expression Card" className="expression-card">
       <Descriptions.Item label="expression">{item.expression}</Descriptions.Item>
       <Descriptions.Item label="meaning">{item.meaning}</Descriptions.Item>
       <Descriptions.Item label="synonyms">{item.synonyms}</Descriptions.Item>

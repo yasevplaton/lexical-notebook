@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/blocks/App.pcss';
 import './styles/base.pcss';
 import { Layout, Row, Col } from 'antd';
 import Logo from './components/Logo';
@@ -8,7 +7,7 @@ import SettingsEnter from './components/SettingsEnter';
 import CategoryList from './components/CategoryList';
 import ExpressionList from './components/ExpressionList';
 import ExpressionCard from './components/ExpressionCard';
-
+import AddButton from './components/AddButton';
 const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
@@ -31,6 +30,7 @@ function App() {
         <Layout className="layout__main">
           <Sider className="sider">
             <CategoryList className="CategoryList"></CategoryList>
+            <AddButton type={'category'}></AddButton>
           </Sider>
           <Sider className="sider">
             <ExpressionList className="ExpressionList"></ExpressionList>

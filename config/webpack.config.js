@@ -98,11 +98,11 @@ module.exports = function(webpackEnv) {
               extensions: ".pcss"
             }),
             require('postcss-nested'),
-            require("postcss-pxtorem")({
-              rootValue: 16,
-              propList: ["*", "!*border*"],
-              selectorBlackList: [/^html$/]
-            }),
+            // require("postcss-pxtorem")({
+            //   rootValue: 16,
+            //   propList: ["*", "!*border*"],
+            //   selectorBlackList: [/^html$/]
+            // }),
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
@@ -493,6 +493,15 @@ module.exports = function(webpackEnv) {
                 },
                 'sass-loader'
               ),
+            },
+            {
+              test: /\.(ttf|eot|woff|woff2)$/,
+              use: {
+                loader: "file-loader",
+                options: {
+                  name: "[name].[ext]",
+                },
+              },
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.

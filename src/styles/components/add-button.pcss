@@ -1,13 +1,22 @@
 .add-button {
-  color: white;
   background: black;
-  border-radius: 50%;
   border: none;
+  padding: 0 !important;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     background: grey;
   }
-  &:focus, &:active {
-    background: black;
+
+  &--expression {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
   }
+
+  &--expression-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }

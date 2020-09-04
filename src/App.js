@@ -15,11 +15,11 @@ function App() {
     <Layout className="layout">
       <div className="layout__container">
         <Header className="header">
-          <Row className="row">
-            <Col className="col" span={8}>
+          <Row className="row row--header">
+            <Col className="col col--logo" span={8}>
               <Logo className="Logo"></Logo>
             </Col>
-            <Col className="col" span={8}>
+            <Col className="col col--search-bar" span={8}>
               <SearchBar className="Searchbar"></SearchBar>
             </Col>
             <Col className="col col--settings" span={8}>
@@ -37,6 +37,9 @@ function App() {
           </Sider>
           <Content className="content">
             <ExpressionCard></ExpressionCard>
+            <div className="add-button--expression-wrapper">
+              <AddButton type={'expression'}></AddButton>
+            </div>
           </Content>
         </Layout>
         <Footer className="footer">Made with love by yasevplaton</Footer>
